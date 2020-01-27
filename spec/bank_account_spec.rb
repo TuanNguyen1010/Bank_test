@@ -17,6 +17,10 @@ describe BankAccount do
       @bank_account.deposit(500)
       expect { @bank_account.withdraw(500) }.to change { @bank_account.balance } .by(-500)
     end 
+
+    it 'raises an error when withdrawing from account without any balance' do 
+      expect { @bank_account.withdraw(500) }.to raise_error 'Insufficient funds in your account'
+    end
   end
   
   describe 'transaction' do 
