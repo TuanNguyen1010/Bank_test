@@ -1,19 +1,19 @@
 require 'bank_statement' 
 
 describe BankStatement do 
-  let(:transaction){double :transaction, deposit: 0, withdraw: 0}
-  subject(:bank_statement){described_class.new()}
-
+  let(:transaction) { double :transaction, deposit: 0, withdraw: 0 }
+  subject(:bank_statement) { described_class.new() }
 
   describe '#deposit_statement' do 
     it 'accepts deposit' do
-      expect(bank_statement.deposit_statement(100)).to eq(100)
+      bank_statement.deposit_statement(1000, 1000)
+      expect(bank_statement.statement).to include(1000)
     end 
   end 
 
   describe '#withdraw_statement' do 
     it 'accepts withdraw' do 
-      expect(bank_statement.withdraw_statement(100)).to eq(100)
+      expect(bank_statement.withdraw_statement(2000, 2000)).to eq(2000)
     end 
   end 
 

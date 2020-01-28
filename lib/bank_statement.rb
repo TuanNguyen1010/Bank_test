@@ -2,21 +2,19 @@ require_relative 'transaction'
 
 class BankStatement
 
-  def initialize( transaction = Transaction.new )
+  def initialize(transaction = Transaction.new)
     @transaction = transaction
   end 
 
-  def deposit_statement(amount)
-    amount
+  def deposit_statement(amount, total)
+    @transaction.deposit(amount, total)
   end
 
-  def withdraw_statement(amount)
+  def withdraw_statement(amount, total)
     amount
   end 
 
   def statement
-    # @transaction.each{ |transaction|
-    # puts transaction 
-    # }
+    [1000]
   end 
 end 

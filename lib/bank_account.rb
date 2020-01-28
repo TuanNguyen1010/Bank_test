@@ -9,17 +9,17 @@ class BankAccount
     @statement = statement
   end 
   
-  def deposit(amount, date = DateTime.now.to_date.strftime("%d/%m/%Y"))
+  def deposit(amount)
     @balance += amount
-    @statement.deposit_statement(amount)
-    # @statement.input(amount)
-    # @transaction.push([date, ' || ', '%.2f' % amount, ' || || ', '%.2f' % @balance].join)
+    @statement.deposit_statement(amount, @balance)
   end 
 
-  def withdraw(amount, date = DateTime.now.to_date.strftime("%d/%m/%Y"))
+  def withdraw(amount)
     raise 'Insufficient funds in your account' if @balance < amount
+    
     @balance -= amount
-    @statement.withdraw_statement(amount)
+    @statement.withdraw_statement(amount, @balance)
     # @transaction.push([date, ' || || ', '%.2f' % amount, ' || ', '%.2f' % @balance].join)
   end 
+
 end 
