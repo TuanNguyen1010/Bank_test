@@ -22,6 +22,7 @@ class BankAccount
   end 
 
   def print_statement
+    puts "date || credit || debit || balance"
     @statement.all_statement.each { |transactions|
       puts transactions
     }

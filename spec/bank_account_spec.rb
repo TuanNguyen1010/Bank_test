@@ -28,7 +28,7 @@ describe BankAccount do
       @bank_account.deposit(500)
       @bank_account.deposit(600)
       @bank_account.withdraw(200)
-      expect { @bank_account.print_statement } .to output("28/01/2020 || 500.00 || || 500.00\n28/01/2020 || 600.00 || || 1100.00\n28/01/2020 || || 200.00 || 900.00\n").to_stdout
+      expect { @bank_account.print_statement } .to output("date || credit || debit || balance\n28/01/2020 || 500.00 || || 500.00\n28/01/2020 || 600.00 || || 1100.00\n28/01/2020 || || 200.00 || 900.00\n").to_stdout
     end
   end
 end 
