@@ -21,4 +21,9 @@ class BankAccount
     @statement.withdraw_statement(amount, @balance)
   end 
 
+  def print_statement
+    @statement.all_statement.each { |transactions|
+      puts transactions
+    }
+  end 
 end 

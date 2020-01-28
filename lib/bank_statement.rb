@@ -1,21 +1,21 @@
 require_relative 'transaction'
 
 class BankStatement
-  attr_reader :statement
+  attr_reader :all_statement
 
   def initialize(transaction = Transaction.new)
     @transaction = transaction
-    @statement = []
+    @all_statement = []
   end 
 
   def deposit_statement(amount, total)
     @transaction.deposit_transaction(amount, total)
-    @statement.push(@transaction.current_transaction)
+    @all_statement.push(@transaction.current_transaction)
   end
 
   def withdraw_statement(amount, total)
     @transaction.withdraw_transaction(amount, total)
-    @statement.push(@transaction.current_transaction)
+    @all_statement.push(@transaction.current_transaction)
   end 
 
 end 

@@ -22,4 +22,13 @@ describe BankAccount do
       expect { @bank_account.withdraw(500) }.to raise_error 'Insufficient funds in your account'
     end
   end
+
+  describe '#print_statement' do 
+    it 'prints out all transactions' do
+      @bank_account.deposit(500)
+      @bank_account.deposit(600)
+      @bank_account.withdraw(200)
+      expect { @bank_account.print_statement } .to output("28/01/2020 || 500.00 || || 500.00\n28/01/2020 || 600.00 || || 1100.00\n28/01/2020 || || 200.00 || 900.00\n").to_stdout
+    end
+  end
 end 
