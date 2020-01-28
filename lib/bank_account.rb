@@ -19,7 +19,6 @@ class BankAccount
     
     @balance -= amount
     @statement.withdraw_statement(amount, @balance)
-    # @transaction.push([date, ' || || ', '%.2f' % amount, ' || ', '%.2f' % @balance].join)
   end 
 
 end 

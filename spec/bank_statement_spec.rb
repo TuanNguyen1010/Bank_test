@@ -7,13 +7,14 @@ describe BankStatement do
   describe '#deposit_statement' do 
     it 'accepts deposit' do
       bank_statement.deposit_statement(1000, 1000)
-      expect(bank_statement.statement).to include(1000)
+      expect(bank_statement.statement[0]).to include('%.2f' %1000)
     end 
   end 
 
   describe '#withdraw_statement' do 
     it 'accepts withdraw' do 
-      expect(bank_statement.withdraw_statement(2000, 2000)).to eq(2000)
+      bank_statement.withdraw_statement(1000, 1000)
+      expect(bank_statement.statement[0]).to include('%.2f' %1000)
     end 
   end 
 
