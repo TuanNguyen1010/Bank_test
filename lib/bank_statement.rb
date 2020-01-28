@@ -1,15 +1,22 @@
-require_relative 'bank_account'
+require_relative 'transaction'
 
 class BankStatement
-  attr_reader :account
 
-  def initialize( account = BankAccount.new )
-    @account = account
+  def initialize( transaction = Transaction.new )
+    @transaction = transaction
+  end 
+
+  def deposit_statement(amount)
+    amount
+  end
+
+  def withdraw_statement(amount)
+    amount
   end 
 
   def statement
-    @account.transaction.each{ |transaction|
-    puts transaction 
-    }
+    # @transaction.each{ |transaction|
+    # puts transaction 
+    # }
   end 
 end 
