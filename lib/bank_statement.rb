@@ -3,19 +3,20 @@ require_relative 'transaction'
 class BankStatement
   attr_reader :all_statement
 
-  def initialize(transaction = Transaction.new)
-    @transaction = transaction
+  def initialize(transaction_class = Transaction)
+    @transaction = transaction_class
     @all_statement = []
   end 
 
-  def deposit_statement(amount, total)
-    @transaction.deposit_transaction(amount, total)
-    @all_statement.push(@transaction.current_transaction)
+  def deposit_statement(date, amount, total)
+    @all_statement.push(@transaction.new(date, amount, nil, total))
+    @all_statement.last
+
   end
 
-  def withdraw_statement(amount, total)
-    @transaction.withdraw_transaction(amount, total)
-    @all_statement.push(@transaction.current_transaction)
+  def withdraw_statement(date, amount, total)
+    @all_statement.push(@transaction.new(date, nil, amount, total))
+    @all_statement.last
   end 
 
 end 
