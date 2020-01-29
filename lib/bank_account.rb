@@ -1,6 +1,6 @@
 require_relative 'bank_statement'
 require 'date'
-# require_relative 'statement'
+require_relative 'statement'
 
 class BankAccount
   attr_reader :balance, :transaction
@@ -19,7 +19,7 @@ class BankAccount
 
   def withdraw(amount)
     raise 'Insufficient funds in your account' if @balance < amount
-    
+
     @balance -= amount
     @statement.withdraw_statement(@date, amount, @balance)
     @balance
