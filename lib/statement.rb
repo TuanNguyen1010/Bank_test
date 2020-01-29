@@ -7,7 +7,9 @@ class StatementFormat
   end 
 
   def statement_format
-    "#{@statement_log.all_statement[0]} || #{@statement_log.all_statement[1]} || #{@statement_log.all_statement[2]} || #{@statement_log.all_statement[3]}"
+    @statement_log.map { |transaction|
+    "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.total}"
+    }
   end
 
 end 

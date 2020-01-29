@@ -27,5 +27,11 @@ describe BankAccount do
     it 'prints out empty statement' do 
       expect { @bank_account.print_statement } .to output("date || credit || debit || balance\n").to_stdout
     end 
+
+    it ' prints out 2 transactions' do 
+      @bank_account.deposit(500)
+      @bank_account.withdraw(200)
+      expect { @bank_account.print_statement } .to output("date || credit || debit || balance\n29/01/2020 || 500 ||  || 500\n29/01/2020 ||  || 200 || 300\n").to_stdout
+    end 
   end
 end 
