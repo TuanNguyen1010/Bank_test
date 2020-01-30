@@ -1,5 +1,5 @@
 require 'bank_statement'
-require 'statement'
+require 'statement_format'
 
 describe StatementFormat do
   

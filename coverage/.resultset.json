@@ -41,19 +41,19 @@
         1,
         null,
         1,
-        10,
-        10,
-        null,
-        null,
-        1,
         7,
         7,
         null,
         null,
+        1,
+        5,
+        5,
+        null,
+        null,
         null,
         1,
-        4,
-        4,
+        3,
+        3,
         null,
         null,
         null
@@ -63,14 +63,14 @@
         1,
         null,
         1,
-        12,
-        12,
-        12,
-        12,
+        9,
+        9,
+        9,
+        9,
         null,
         null
       ],
-      "/Users/tuannguyen/Desktop/projects/tech_test/bank_test/lib/statement.rb": [
+      "/Users/tuannguyen/Desktop/projects/tech_test/bank_test/lib/statement_format.rb": [
         1,
         null,
         1,
@@ -94,6 +94,6 @@
         null
       ]
     },
-    "timestamp": 1580345340
+    "timestamp": 1580347481
   }
 }

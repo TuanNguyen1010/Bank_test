@@ -1,6 +1,6 @@
 require_relative 'bank_statement'
 require 'date'
-require_relative 'statement'
+require_relative 'statement_format'
 
 class BankAccount
   attr_reader :balance, :transaction
