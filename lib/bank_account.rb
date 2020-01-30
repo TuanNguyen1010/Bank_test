@@ -5,7 +5,7 @@ require_relative 'statement_format'
 class BankAccount
   attr_reader :balance, :transaction
 
-  def initialize(bank_statement = BankStatement.new, date = DateTime.now.to_date.strftime("%d/%m/%Y"))
+  def initialize(bank_statement = BankStatement.new)
     @balance = 0
     @bank_statement = bank_statement
   end 
@@ -16,7 +16,7 @@ class BankAccount
     @balance
   end 
 
-  def withdraw(date = DateTime.now.to_date.strftime("%d/%m/%Y") , amount)
+  def withdraw(date = DateTime.now.to_date.strftime("%d/%m/%Y"), amount)
     raise 'Insufficient funds in your account' if @balance < amount
 
     @balance -= amount

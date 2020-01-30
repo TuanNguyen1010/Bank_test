@@ -1,4 +1,4 @@
-require 'bank_statement'
+require_relative 'bank_statement'
 
 class StatementFormat
 
@@ -9,8 +9,8 @@ class StatementFormat
   def format
     puts header
     @statement_log.map { |transaction|
-    "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.total}"
-    }
+      "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.total}"
+    }.reverse
   end
 
   private 

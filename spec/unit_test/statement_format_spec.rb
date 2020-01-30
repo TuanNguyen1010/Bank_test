@@ -4,7 +4,7 @@ require 'statement_format'
 describe StatementFormat do
   
   let(:transaction) { double :transaction, date: nil, credit: 0, debit: 0, total: 0 }
-  let(:transaction_class) { double :transaction_class, new: transaction}
+  let(:transaction_class) { double :transaction_class, new: transaction }
   subject(:statement) { decribed_class.new(transaction_class) }
   
   describe '#format_statement' do

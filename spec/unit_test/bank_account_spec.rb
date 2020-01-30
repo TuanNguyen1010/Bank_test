@@ -3,11 +3,11 @@ require 'date'
 
 describe BankAccount do 
 
-  let(:bank_statement) {double :bank_statement, transaction: nil}
-  let(:statement_format) {double :statement_format, format: nil}
-  let(:statement_format_class) {double :statement_format_class, new: statement_format}
-  let(:bank_statement_class) {double :bank_statement_class, deposit_statement: nil, withdraw_statement: nil, all_statement:[]}
-  subject(:bank_account) { described_class.new(bank_statement_class)}
+  let(:bank_statement) { double :bank_statement, transaction: nil }
+  let(:statement_format) { double :statement_format, format: nil }
+  let(:statement_format_class) { double :statement_format_class, new: statement_format }
+  let(:bank_statement_class) { double :bank_statement_class, deposit_statement: nil, withdraw_statement: nil, all_statement: [] }
+  subject(:bank_account) { described_class.new(bank_statement_class) }
 
   describe '#deposit' do
     it 'deposit 1000 into the account' do 

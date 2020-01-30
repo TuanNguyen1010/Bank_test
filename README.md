@@ -22,9 +22,6 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00 
 ```
 
-
-
-
 User Stories
 ``` 
 As a User,
