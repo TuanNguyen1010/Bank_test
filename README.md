@@ -74,8 +74,11 @@ date || credit || debit || balance
 ```
 
 <h2>Gems used</h2>
+
 ```
+
 > Rspec
 > SimpleCov
 > Rubocop
+
 ```
