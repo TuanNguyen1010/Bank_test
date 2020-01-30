@@ -3,7 +3,6 @@ require 'date'
 require_relative 'statement_format'
 
 class BankAccount
-  attr_reader :balance, :transaction
 
   def initialize(bank_statement = BankStatement.new)
     @balance = 0
