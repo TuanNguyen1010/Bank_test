@@ -8,32 +8,24 @@ class BankAccount
   def initialize(bank_statement = BankStatement.new, date = DateTime.now.to_date.strftime("%d/%m/%Y"))
     @balance = 0
     @bank_statement = bank_statement
-    @date = date
   end 
   
-  def deposit(amount)
+  def deposit(date = DateTime.now.to_date.strftime("%d/%m/%Y"), amount)
     @balance += amount
-    @bank_statement.deposit_statement(@date, amount, @balance)
+    @bank_statement.deposit_statement(date, amount, @balance)
     @balance
   end 
 
-  def withdraw(amount)
+  def withdraw(date = DateTime.now.to_date.strftime("%d/%m/%Y") , amount)
     raise 'Insufficient funds in your account' if @balance < amount
 
     @balance -= amount
-    @bank_statement.withdraw_statement(@date, amount, @balance)
+    @bank_statement.withdraw_statement(date, amount, @balance)
     @balance
   end 
 
-  def print_statement
-    puts header
-    statement = StatementFormat.new(@bank_statement.all_statement)
+  def print_statement(statement_formatter = StatementFormat)
+    statement = statement_formatter.new(@bank_statement.all_statement)
     puts statement.statement_format
-  end 
-
-  private 
-
-  def header
-    "date || credit || debit || balance"
   end 
 end 
