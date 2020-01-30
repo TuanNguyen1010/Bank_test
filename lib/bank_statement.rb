@@ -3,9 +3,9 @@ require_relative 'transaction'
 class BankStatement
   attr_reader :all_statement
 
-  def initialize(transaction_class = Transaction, all_statement = [])
+  def initialize(transaction_class = Transaction)
     @transaction = transaction_class
-    @all_statement = all_statement
+    @all_statement = []
   end 
 
   def deposit_statement(date, amount, total)

@@ -3,8 +3,10 @@ require 'date'
 
 describe BankAccount do 
 
-  let(:statement) {double :statement, bank_statement: nil}
-  let(:bank_statement_class) {double :bank_statement_class, deposit_statement: nil, withdraw_statement: nil}
+  let(:bank_statement) {double :bank_statement, transaction: nil}
+  let(:statement_format) {double :statement_format, format: nil}
+  let(:statement_format_class) {double :statement_format_class, new: statement_format}
+  let(:bank_statement_class) {double :bank_statement_class, deposit_statement: nil, withdraw_statement: nil, all_statement:[]}
   subject(:bank_account) { described_class.new(bank_statement_class)}
 
   describe '#deposit' do
@@ -25,6 +27,10 @@ describe BankAccount do
   end
 
   describe '#print_statement' do 
-
+    it 'accepts bank statement class' do 
+      expect(statement_format_class).to receive(:new)
+      expect(statement_format).to receive(:format)
+      bank_account.print_statement(statement_format_class)
+    end
   end
 end 

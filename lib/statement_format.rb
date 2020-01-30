@@ -6,7 +6,7 @@ class StatementFormat
     @statement_log = statement_log
   end 
 
-  def statement_format
+  def format
     puts header
     @statement_log.map { |transaction|
     "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.total}"

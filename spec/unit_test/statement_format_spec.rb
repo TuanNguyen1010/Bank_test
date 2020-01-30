@@ -12,7 +12,7 @@ describe StatementFormat do
       bs = BankStatement.new
       bs.deposit_statement("12/01/2020", 100, 100)
       sf = StatementFormat.new(bs.all_statement)
-      expect(sf.statement_format).to eq(["12/01/2020 || 100 ||  || 100"])
+      expect(sf.format).to eq(["12/01/2020 || 100 ||  || 100"])
     end 
   end 
 end 

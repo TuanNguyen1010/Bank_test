@@ -26,6 +26,6 @@ class BankAccount
 
   def print_statement(statement_formatter = StatementFormat)
     statement = statement_formatter.new(@bank_statement.all_statement)
-    puts statement.statement_format
+    puts statement.format
   end 
 end 
