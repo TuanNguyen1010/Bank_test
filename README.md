@@ -1,13 +1,13 @@
-Bank account project
+<h1>Bank account project</h1>
 
-Requirements
+<h2>Requirements</h2>
 You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
 Deposits, withdrawal.
 Account statement (date, amount, balance) printing.
 Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 
-Acceptance criteria
+<h2>Acceptance criteria</h2>
 
 ```
 Given a client makes a deposit of 1000 on 10-01-2012
@@ -22,22 +22,24 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00 
 ```
 
-User Stories
+<h2>User Stories</h2>
 ``` 
 As a User,
 So I can have a balance on my account, 
 I want to deposit money into my account.
-
+```
+```
 As a User, 
 So I can spend cash, 
 I want to be able to withdraw money from my account.
-
+```
+```
 As a User, 
 So I can see my transactions, 
 I want to be able to print out my bank statement.
 ```
 
-QuickStart
+<h2>QuickStart</h2>
 
 First, clone the repository. Then:
 
@@ -71,7 +73,7 @@ date || credit || debit || balance
 2.6.3 :006 > 
 ```
 
-Gems used
+<h2>Gems used</h2>
 ```
 > Rspec
 > SimpleCov
