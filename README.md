@@ -82,3 +82,7 @@ date || credit || debit || balance
 > Rubocop
 
 ```
+
+<h2>Approach </h2>
+
+My approach for the tech test was to start of basic functionailty and create test which had dependancities on each other to make sure I had working code and test. I would then implement doubles and mocks afterwards. 
