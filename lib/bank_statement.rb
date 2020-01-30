@@ -9,13 +9,13 @@ class BankStatement
   end 
 
   def deposit_statement(date, amount, total)
-    @all_statement.push(@transaction.new(date, amount, nil, total))
+    @all_statement.push(@transaction.new(date, '%.2f' % amount, nil, '%.2f' % total))
     @all_statement.last
 
   end
 
   def withdraw_statement(date, amount, total)
-    @all_statement.push(@transaction.new(date, nil, amount, total))
+    @all_statement.push(@transaction.new(date, nil, '%.2f' % amount, '%.2f' % total))
     @all_statement.last
   end 
 
