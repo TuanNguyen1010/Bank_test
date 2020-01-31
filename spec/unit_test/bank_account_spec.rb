@@ -3,9 +3,9 @@ require 'bank_account'
 describe BankAccount do 
 
   let(:bank_statement) { double :bank_statement, transaction: nil }
-  let(:statement_format) { double :statement_format, format: nil }
+  let(:statement_format) { double :statement_format, format: ["12/01/2020 || 100.00 || || 100.00"] }
   let(:statement_format_class) { double :statement_format_class, new: statement_format }
-  let(:bank_statement_class) { double :bank_statement_class, deposit_statement: nil, withdraw_statement: nil, all_statement: [] }
+  let(:bank_statement_class) { double :bank_statement_class, deposit_statement: nil, withdraw_statement: nil, all_statement: ["12/01/2020", 100, nil, 100] }
   subject(:bank_account) { described_class.new(bank_statement_class) }
 
   describe '#deposit' do
@@ -31,5 +31,9 @@ describe BankAccount do
       expect(statement_format).to receive(:format)
       bank_account.print_statement(statement_format_class)
     end
+
+    it 'prints out statement' do 
+      expect { bank_account.print_statement(statement_format_class) } .to output("12/01/2020 || 100.00 || || 100.00\n").to_stdout
+    end 
   end
 end 

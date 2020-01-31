@@ -47,6 +47,13 @@ First, clone the repository. Then:
 > bundle install
 ```
 
+type following on command line
+
+```
+rspec # To run tests
+rubocop # To run linter
+```
+
 You should be able to run the app through IRB
 
 ```
