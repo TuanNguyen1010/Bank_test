@@ -1,9 +1,9 @@
 <h1>Bank account project</h1>
 
 <h2>Requirements</h2>
-- You should be able to interact with your code via a REPL like IRB or the JavaScriptconsole. (You don't need to implement a command line interface that takes input from STDIN.) <b>
-- Deposits, withdrawal. <b>
-- Account statement (date, amount, balance) printing. <b>
+- You should be able to interact with your code via a REPL like IRB or the JavaScriptconsole. (You don't need to implement a command line interface that takes input from STDIN.) <br>
+- Deposits, withdrawal. <br>
+- Account statement (date, amount, balance) printing. <br>
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 
